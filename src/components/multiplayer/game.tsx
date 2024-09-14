@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { TbPlayerTrackNextFilled } from "react-icons/tb";
 import getDifficulty from "../singleplayer/helpers/difficulty";
 import Generate_Matrix from "../singleplayer/helpers/matrix_generator";
@@ -20,7 +20,7 @@ export default function Game({ onGameEnd, data }: GameProps) {
   const [map, setMap] = useState(
     Generate_Matrix(starting_elements, starting_size)
   );
-  const [socket] = useRef(new WebSocket(`${apiWS}`));
+  const [socket] = useState(new WebSocket(`${apiWS}`));
   const [foundElements, setFountElements] = useState(0);
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState<number>(4);
