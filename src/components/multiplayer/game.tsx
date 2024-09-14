@@ -38,7 +38,7 @@ export default function Game({ onGameEnd, data }: GameProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       joinRoom();
-    }, 700);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
