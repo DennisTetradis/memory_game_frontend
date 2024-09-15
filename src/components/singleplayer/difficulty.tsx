@@ -30,18 +30,18 @@ export default function Difficulty({ onButtonClick }: DifficultyProps) {
   ];
 
   return (
-    <div>
+    <div className="relative ">
       <button
-        className="absolute text-customWhite top-1/2 left-1/4 -translate-y-8 -translate-x-10 text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+        className="absolute text-customWhite top-1/2 left-20 md:top-1/2 md:left-1/4 -translate-y-8 -translate-x-10 text-3xl md:text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
         onClick={() => {
           onButtonClick("Difficulty");
         }}
       >
         <TbPlayerTrackNextFilled />
       </button>
-      <div className="flex flex-row items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center h-screen p-4 md:flex-row md:flex-wrap">
         {items.map((button) => (
-          <div className="relative " key={button.description}>
+          <div className="relative mb-4 md:mb-0" key={button.description}>
             <button
               onMouseEnter={() => {
                 setSpanValue(button.description);
@@ -54,7 +54,7 @@ export default function Difficulty({ onButtonClick }: DifficultyProps) {
                   }, 5000);
                 }
               }}
-              className="font-jersey text-5xl hover:bg-customPurple text-customWhite px-4 py-2 m-5 rounded w-48"
+              className="font-jersey text-3xl md:text-5xl hover:bg-customPurple text-customWhite px-4 py-2 rounded md:w-48 md:mx-2"
               key={button.difficulty}
               onClick={() => onButtonClick(button.difficulty)}
             >
@@ -64,7 +64,7 @@ export default function Difficulty({ onButtonClick }: DifficultyProps) {
         ))}
         <span
           ref={spanDescription}
-          className="absolute bottom-72 select-none text-3xl font-serif mb-2 w-max text-customPurple rounded-lg py-5 px-2 z-10 justify-center opacity-0 hover:opacity-100 transition-opacity duration-700"
+          className="absolute bottom-16 md:bottom-72 select-none text-2xl md:text-3xl font-serif mb-2 w-max text-customPurple rounded-lg py-5 px-2 z-10 justify-center opacity-0 hover:opacity-100 transition-opacity duration-700"
         >
           {spanValue}
         </span>

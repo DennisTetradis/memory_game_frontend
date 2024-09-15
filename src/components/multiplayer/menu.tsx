@@ -90,21 +90,20 @@ export default function MultiplayerMenu({
   return (
     <div>
       {isMenuOpen && (
-        <div>
+        <div className="relative">
           <button
-            className="absolute text-customWhite top-1/2 left-1/4 -translate-y-8 -translate-x-10 text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+            className="absolute text-customWhite top-1/2 left-20 md:top-1/2 md:left-1/4 -translate-y-8 -translate-x-10 text-3xl md:text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
             onClick={() => {
               onButtonClick("Play with a friend");
             }}
           >
             <TbPlayerTrackNextFilled />
           </button>
-          <div className="flex flex-row items-center justify-center h-screen">
+          <div className="flex flex-col items-center justify-center h-screen p-4 md:flex-row md:space-x-4">
             {choices.map((button) => (
-              <div className="relative " key={button}>
+              <div className="relative mb-4 md:mb-0" key={button}>
                 <button
-                  className="font-jersey text-5xl hover:bg-customPurple text-customWhite px-4 py-2 m-3 rounded w-64"
-                  key={button}
+                  className="font-jersey text-3xl md:text-5xl hover:bg-customPurple text-customWhite px-4 py-2 rounded w-full md:w-64"
                   onClick={() => onChoice(button)}
                 >
                   {button}
@@ -116,18 +115,18 @@ export default function MultiplayerMenu({
       )}
 
       {isDifficultyOpen && (
-        <div>
+        <div className="relative">
           <button
-            className="absolute text-customWhite top-1/2 left-1/4 -translate-y-8 -translate-x-10 text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+            className="absolute text-customWhite top-1/2 left-20 md:top-1/2 md:left-1/4 -translate-y-8 -translate-x-10 text-3xl md:text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
             onClick={() => {
               toggleDifficulty();
             }}
           >
             <TbPlayerTrackNextFilled />
           </button>
-          <div className="flex flex-row items-center justify-center h-screen">
+          <div className="flex flex-col items-center justify-center h-screen space-y-4 md:space-y-0 md:flex-row md:space-x-0 p-4">
             {difficulties.map((button) => (
-              <div className="relative " key={button.description}>
+              <div className="relative" key={button.description}>
                 <button
                   onMouseEnter={() => {
                     setSpanValue(button.description);
@@ -140,18 +139,16 @@ export default function MultiplayerMenu({
                       }, 5000);
                     }
                   }}
-                  className="font-jersey text-5xl hover:bg-customPurple text-customWhite px-4 py-2 m-5 rounded w-48"
-                  key={button.difficulty}
+                  className="font-jersey text-3xl md:text-5xl hover:bg-customPurple text-customWhite px-4 py-2 m-3 md:m-5 rounded w-40 md:w-48"
                   onClick={() => onDifficultySelect(button.difficulty)}
                 >
                   {button.difficulty}
                 </button>
               </div>
             ))}
-
             <span
               ref={spanDescription}
-              className="absolute bottom-72 select-none text-3xl font-serif mb-2 w-max text-customPurple rounded-lg py-5 px-2 z-10 justify-center opacity-0 hover:opacity-100 transition-opacity duration-700"
+              className="absolute bottom-24 md:bottom-72 select-none text-xl md:text-3xl font-serif w-max text-customPurple rounded-lg py-3 px-2 z-10 justify-center opacity-0 transition-opacity duration-700"
             >
               {spanValue}
             </span>
@@ -159,27 +156,30 @@ export default function MultiplayerMenu({
         </div>
       )}
       {isJoinRoomOpen && (
-        <div>
+        <div className="relative">
           <button
-            className="absolute text-customWhite top-1/2 left-1/4 -translate-y-8 -translate-x-10 text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+            className="absolute text-customWhite top-1/4 left-4 md:top-1/2 md:left-1/4 -translate-y-0 md:-translate-y-8 -translate-x-0 md:-translate-x-10 text-3xl md:text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
             onClick={() => {
               toggleJoinRoom();
             }}
           >
             <TbPlayerTrackNextFilled />
           </button>
-          <div className="flex flex-row items-center justify-center h-screen">
-            <form onSubmit={() => handleJoinRoomBack()}>
+          <div className="flex flex-col items-center justify-center h-screen space-y-4 md:space-y-0 md:flex-row md:space-x-4 p-4">
+            <form
+              onSubmit={() => handleJoinRoomBack()}
+              className="w-full md:w-auto"
+            >
               <input
-                className="bg-customPurple font-jersey text-center text-customWhite text-5xl border border-customWhite rounded-lg shadow-lg hover:bg-customDarkPurple transition-all duration-300 ease-in-out transform hover:scale-105"
-                placeholder="insert room code..."
+                className="w-full md:w-auto bg-customPurple font-jersey text-center text-customWhite text-2xl md:text-5xl border border-customWhite rounded-lg shadow-lg hover:bg-customDarkPurple transition-all duration-300 ease-in-out transform hover:scale-105 p-3"
+                placeholder="Insert room code..."
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setRoomId(e.target.value);
                 }}
-              ></input>
+              />
             </form>
             <button
-              className="text-customWhite text-2xl rounded-full mx-2 p-2 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+              className="text-customWhite text-2xl md:text-3xl rounded-full mx-2 p-3 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
               onClick={() => handleJoinRoomBack()}
             >
               <TbPlayerTrackNextFilled />
