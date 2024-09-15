@@ -19,17 +19,15 @@ export default function Difficulty({ onButtonClick }: DifficultyProps) {
   };
 
   return (
-    <div>
-      <form className="flex flex-row items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen px-4">
+      <form className="flex flex-col sm:flex-row items-center w-full max-w-md">
         <input
-          className="bg-customDarkPurple placeholder-customPurple font-jersey text-center text-customPurple text-5xl border-2 border-customPurple rounded-lg shadow-lg hover:bg-customDarkPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+          className="bg-customDarkPurple placeholder-customPurple font-jersey text-center text-customPurple text-xl sm:text-3xl lg:text-5xl border-2 border-customPurple rounded-lg shadow-lg py-2 px-4 w-full sm:w-auto hover:bg-customDarkPurple transition-all duration-300 ease-in-out transform hover:scale-105"
           placeholder="insert username..."
-          onChange={(e) => {
-            handleChange(e);
-          }}
-        ></input>
+          onChange={(e) => handleChange(e)}
+        />
         <button
-          className="text-customWhite text-2xl rounded-full mx-2 p-2 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+          className="text-customWhite text-lg sm:text-2xl rounded-full mx-2 p-2 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105 mt-4 sm:mt-0"
           onClick={() => handleForumSubmit()}
         >
           <TbPlayerTrackNextFilled />

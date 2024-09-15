@@ -102,17 +102,16 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="h-screen bg-customDarkPurple">
-        <h1 className="absolute select-none font-jersey text-9xl z-40 top-8 p-4 left-1/2 transform -translate-x-1/2 mb-4 bg-gradient-to-r from-customPurple via-customWhite to-customPurple text-transparent bg-clip-text text-shadow-glow hover:text-shadow-glow-hover">
-          MemoryGame
-        </h1>
-
-        <div className="absolute top-12 right-4 flex space-x-4 m-4">
-          <p className="font-jersey text-6xl rounded-lg text-customWhite text-center p-2 py-1 border-4 border-customPurple min-w-40">
-            {username}
-          </p>
-        </div>
+    <div className="w-screen h-screen bg-customDarkPurple relative overflow-hidden">
+      <h1 className="absolute select-none font-jersey text-2xl md:text-9xl z-40 top-4 left-1/4 md:left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-customPurple via-customWhite to-customPurple text-transparent bg-clip-text text-shadow-glow hover:text-shadow-glow-hover">
+        MemoryGame
+      </h1>
+      <div className="absolute top-4 right-4 md:top-8 sm:top-12 flex space-x-4">
+        <p className="font-jersey text-xl md:text-6xl rounded-lg text-customWhite text-center px-4 py-2 border-4 border-customPurple">
+          {username}
+        </p>
+      </div>
+      <div>
         {isOpenUsername && <Username onButtonClick={handleUsername} />}
         {isOpenMainmenu && <MainMenu onButtonClick={handleToggle} />}
         {isOpenScoreBoard && (
@@ -131,7 +130,7 @@ const App: React.FC = () => {
           />
         )}
       </div>
-    </>
+    </div>
   );
 };
 
