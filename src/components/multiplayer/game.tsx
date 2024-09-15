@@ -188,7 +188,7 @@ export default function Game({ onGameEnd, data }: GameProps) {
   return (
     <div>
       <button
-        className="absolute text-customWhite top-1/2 left-1/4 -translate-y-8 -translate-x-40 text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+        className="absolute text-customWhite top-1/4 md:top-1/2 left-2/4 md:left-1/4 z-50 md:-translate-x-10 -translate-x-10 md:-translate-y-8 -translate-y-40 text-5xl md:text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
         onClick={() => {
           handleLoss();
         }}

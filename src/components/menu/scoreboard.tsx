@@ -53,20 +53,20 @@ export default function Scoreboard({
   return (
     <div className="relative">
       <button
-        className="absolute text-customWhite top-1 left-1/4 md:left-1/4 z-50 md:-translate-x-40 md:-translate-y-1 -translate-y-20 text-5xl md:text-3xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
+        className="absolute text-customWhite top-1/4 md:top-1/2 left-2/4 md:left-1/4 z-50 md:-translate-x-10 -translate-x-10 md:-translate-y-40 -translate-y-60 text-5xl rounded-full mx-2 p-2 rotate-180 hover:bg-customPurple transition-all duration-300 ease-in-out transform hover:scale-105"
         onClick={() => onButtonClick("Scoreboard")}
       >
         <TbPlayerTrackNextFilled />
       </button>
-      <div className="bg-customWhite max-w-2xl md:w-2/4 w-5/6 md:max-w-full mx-auto border border-customWhite rounded-lg shadow-lg md:mt-60 mt-40">
-        <div className="grid bg-customDarkPurple grid-cols-2 md:grid-cols-4 gap-2 mb-4 rounded-lg rounded-b-none p-4">
+      <div className="bg-customWhite max-w-2xl md:w-2/6 w-5/6 md:max-w-full mx-auto border border-customWhite rounded-lg shadow-lg md:mt-60 mt-40">
+        <div className="grid bg-customDarkPurple grid-cols-2 md:grid-cols-4 gap-1 rounded-lg rounded-b-none p-1 md:pb-0">
           {difficulties.map((button_difficulty) => (
             <button
               key={button_difficulty}
-              className={`text-customWhite font-jersey text-4xl md:text-2xl py-2 rounded transition-all duration-300 shadow-lg ${
+              className={`text-customWhite font-jersey text-4xl py-2 rounded md:rounded-b-none transition-all duration-300 shadow-lg ${
                 selectedDifficulty === button_difficulty
                   ? "bg-customDarkPurple"
-                  : "bg-customPurple hover:bg-customDarkPurple"
+                  : "bg-customPurple"
               }`}
               onClick={() => {
                 setSelectedDifficulty(button_difficulty);
