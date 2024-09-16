@@ -23,7 +23,7 @@ export default function Game({ onGameEnd, data }: GameProps) {
   const [socket] = useState(new WebSocket(`${apiWS}`));
   const [foundElements, setFountElements] = useState(0);
   const [score, setScore] = useState(0);
-  const [lives, setLives] = useState<number>(4);
+  const [lives, setLives] = useState<number>(1);
   const [livesUsed, setLivesUsed] = useState<number>(0);
   const [isGameOver, setIsIsGameOver] = useState<boolean>(false);
   const [isWaitingToStart, setIsWaitingToStart] = useState<boolean>(true);
@@ -284,7 +284,7 @@ export default function Game({ onGameEnd, data }: GameProps) {
           </button>
         </div>
       )}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4 flex items-center p-6">
+      <div className="absolute bottom-0 z-40 left-1/2 transform -translate-x-1/2 mb-4 flex items-center p-6">
         <h1 className="text-customWhite font-jersey text-5xl">Lives:</h1>
         <h1 className="p-2 text-customPurple font-jersey text-5xl">
           {Math.floor(lives)}
