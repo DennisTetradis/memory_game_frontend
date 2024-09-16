@@ -31,14 +31,14 @@ export default function Cell({
         <button
           key={`${rowIndex}-${colIndex}`}
           className={clsx(
-            "p-10 rounded-lg shadow-lg focus:outline-none transition-all duration-500 bg-customPurple animate-flip"
+            "p-6 md:p-10 rounded-lg shadow-lg focus:outline-none transition-all duration-500 bg-customPurple animate-flip"
           )}
         ></button>
       ) : (
         <button
           key={`${rowIndex}-${colIndex}`}
           className={clsx(
-            "p-10 text-white rounded-lg shadow-lg transition-all duration-500",
+            "p-6 md:p-10 text-white rounded-lg shadow-lg transition-all duration-500",
             {
               "bg-customWhite hover:ring-4 ring-customPurple": !cell.open,
               "bg-customPurple": cell.open,

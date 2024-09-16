@@ -195,9 +195,9 @@ export default function Game({ onGameEnd, data }: GameProps) {
       >
         <TbPlayerTrackNextFilled />
       </button>
-      <div className="absolute right-1 top-1/4 min-w-20 bg-customWhite border-8 z-20 border-customPurple rounded-lg transform -translate-x-1/6 mb-4 mr-20">
+      <div className="absolute md:right-1 right-1/2 md:top-1/4 top-3/4 min-w-40 bg-customWhite md:border-8 border-4 z-20 border-customPurple rounded-lg transform -translate-y-40 md:-translate-y-0 -translate-x-1/6 md:mr-10">
         <h1
-          className="font-jersey text-5xl text-center text-customPurple p-2 bg-customDarkPurple"
+          className="font-jersey md:text-5xl text-2xl text-center text-customPurple md:p-2 p-1 bg-customDarkPurple"
           key={Math.random()}
         >
           CONNECTED PLAYERS
@@ -205,13 +205,13 @@ export default function Game({ onGameEnd, data }: GameProps) {
         {playersScores.map((player) => (
           <div className="flex flex-row p-2 justify-center" key={Math.random()}>
             <h1
-              className="font-jersey text-4xl pl-2 text-center text-customPurple"
+              className="font-jersey md:text-4xl text-2xl md:pl-2 text-center text-customPurple"
               key={Math.random()}
             >
               {player.username} :
             </h1>
             <h1
-              className="font-jersey text-4xl text-center px-1"
+              className="font-jersey md:text-4xl text-2xl text-center px-1"
               key={Math.random()}
             >
               {player.score}
@@ -220,7 +220,7 @@ export default function Game({ onGameEnd, data }: GameProps) {
         ))}
       </div>
       {isWaitingToStart && (
-        <div className="absolute left-1/2 top-2/4 min-w-96 bg-customWhite border-8 z-20 border-customPurple rounded-lg transform -translate-x-1/2 -translate-y-1/2 mb-4 flex items-center p-6">
+        <div className="absolute left-1/2 top-2/4 md:min-w-96 min-w-80 bg-customWhite border-8 z-20 border-customPurple rounded-lg transform -translate-x-1/2 -translate-y-1/2 mb-4 flex items-center p-6">
           <button className="object-cover" onClick={() => handleReady()}>
             <div className="flex flex-col">
               {isReady ? (
@@ -228,12 +228,12 @@ export default function Game({ onGameEnd, data }: GameProps) {
                   Waiting for other player...
                 </h1>
               ) : (
-                <h1 className="text-center font-jersey text-6xl px-7 bg-gradient-to-r from-customPurple via-customWhite to-customPurple text-transparent bg-clip-text">
+                <h1 className="text-center font-jersey md:text-6xl text-4xl px-7 bg-gradient-to-r from-customPurple via-customWhite to-customPurple text-transparent bg-clip-text">
                   Click here to get ready
                 </h1>
               )}
-              <div className="z-40 select-text flex flex-row items-center justify-center p-12 pb-1">
-                <h1 className="z-40 text-customPurple select-text font-jersey text-3xl ">
+              <div className="z-40 select-text flex flex-row items-center justify-center md:p-12 p-6 pb-1">
+                <h1 className="z-40 text-customPurple select-text font-jersey md:text-3xl text-2xl ">
                   Room code:
                 </h1>
                 <h1 className="z-40 p-2 text-customPurple font-jersey text-3xl">
@@ -293,7 +293,7 @@ export default function Game({ onGameEnd, data }: GameProps) {
         <h1 className="p-2 text-customPurple font-jersey text-5xl">{score}</h1>
       </div>
 
-      <div className="flex items-center justify-center h-screen bg-customDarkPurple outline-none ring-2 ring-customWhite ring-offset-2">
+      <div className="flex items-center justify-center -translate-y-36 md:-translate-y-0 h-screen bg-customDarkPurple outline-none ring-2 ring-customWhite ring-offset-2">
         <div
           className="grid gap-2"
           style={{

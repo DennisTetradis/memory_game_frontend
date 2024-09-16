@@ -23,7 +23,7 @@ export default function Mainmenu({
   const [size, setSize] = useState<number>(starting_size);
   const [foundElements, setFountElements] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
-  const [lives, setLives] = useState<number>(0);
+  const [lives, setLives] = useState<number>(5);
   const [livesUsed, setLivesUsed] = useState<number>(0);
   const [isGameOver, setIsIsGameOver] = useState<boolean>(false);
   const [isWaitingToStart, setIsWaitingToStart] = useState<boolean>(true);
